@@ -28,12 +28,12 @@ const PersonalDetails = ({
         }));
     };
 
-    const divStyles = `flex items-center justify-center p-2`;
+    const divStyles = `flex items-center justify-center p-2 gap-2`;
     const inputStyles = `p-2 text-lg font-normal font-sans tracking-normal border-[3px] border-stone-500 rounded-lg`;
     const labelStyles = `w-28 font-medium mx-2 text-xl tracking-wide`;
 
     return (
-        <div className="w-1/2 mx-auto min-h-screen bg-white flex flex-col items-start justify-start gap-2">
+        <div>
             <h1 className=" p-2 text-2xl font-semibold mb-2">
                 Personal Details
             </h1>

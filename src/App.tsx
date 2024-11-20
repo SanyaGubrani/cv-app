@@ -1,9 +1,13 @@
+import Navbar from "./components/Navbar";
 import DisplayCV from "./components/DisplayCV";
 
 const App = () => {
     return (
-        <div>
-            <DisplayCV />
+        <div className="flex flex-col">
+            <Navbar />
+            <div>
+                <DisplayCV />
+            </div>
         </div>
     );
 };

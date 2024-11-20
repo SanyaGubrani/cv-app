@@ -5,3 +5,18 @@ export type PersonalDetailsType = {
     email: string;
     location: string;
 };
+
+export type ExperienceProps = {
+    company: string;
+    location: string;
+    position: string;
+    duration: string;
+    description: string;
+};
+
+export type EducationType = {
+    school: string;
+    location: string;
+    degree: string;
+    year: string;
+};
