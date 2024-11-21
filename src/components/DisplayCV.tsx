@@ -1,4 +1,3 @@
-import { useState } from "react";
 import PersonalDetails from "./PersonalDetails";
 import { PersonalDetailsType } from "@/types/types";
 import Divider from "@/shared/Divider";
@@ -13,38 +12,44 @@ import DisplaySummary from "./DisplaySummary";
 import DisplayExperience from "./DisplayExperience";
 import DisplayEducation from "./DisplayEducation";
 import DisplaySkills from "./DisplaySkills";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const DisplayCV = () => {
-    const [personalDetails, setPersonalDetails] = useState<PersonalDetailsType>(
-        {
+    const [personalDetails, setPersonalDetails] =
+        useLocalStorage<PersonalDetailsType>("personalDetails", {
             name: "",
             title: "",
             contact: "",
             email: "",
             location: "",
-        }
+        });
+    const [summary, setSummary] = useLocalStorage<string>("summary", "");
+    const [experiences, setExperiences] = useLocalStorage<ExperienceProps[]>(
+        "experiences",
+        [
+            {
+                company: "",
+                location: "",
+                position: "",
+                duration: "",
+                description: "",
+            },
+        ]
     );
-    const [summary, setSummary] = useState("");
-    const [experiences, setExperiences] = useState<ExperienceProps[]>([
-        {
-            company: "",
-            location: "",
-            position: "",
-            duration: "",
-            description: "",
-        },
-    ]);
 
-    const [education, setEducation] = useState<EducationType[]>([
-        {
-            school: "",
-            location: "",
-            degree: "",
-            year: "",
-        },
-    ]);
+    const [education, setEducation] = useLocalStorage<EducationType[]>(
+        "education",
+        [
+            {
+                school: "",
+                location: "",
+                degree: "",
+                year: "",
+            },
+        ]
+    );
 
-    const [skills, setSkills] = useState<string[]>([]);
+    const [skills, setSkills] = useLocalStorage<string[]>("skills", []);
 
     return (
         <div className="flex w-full ">

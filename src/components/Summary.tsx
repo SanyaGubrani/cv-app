@@ -11,7 +11,6 @@ const Summary: React.FC<SummaryProps> = ({ summary, setSummary }) => {
     };
 
     const textareaStyles = `p-2 text-lg font-normal font-sans tracking-normal border-[3px] border-stone-500 rounded-lg`;
-    const labelStyles = `w-28 font-medium mx-2 text-xl tracking-wide`;
     return (
         <div>
             <h1 className=" p-2 text-2xl font-semibold mb-2">
